@@ -1,0 +1,115 @@
+ {"recipes": [
+{
+	id: "explorevaultseal_secretpath_encounter",
+	actionId:"explore",
+	label: "A Hidden Door",
+	startdescription: "There must be a door here. But without Lantern or Knock, we can't uncover it.",
+	requirements: {seal_secretpath:1},
+	slots:[{id:"Assistance", description: "Funds are essential for expeditions. Followers will allow me to pass obstacles.",required: {follower:1,funds:1}}],
+	alternativerecipes: [
+	{id: "explorevaultseal_secretpath_highlantern",chance:100},
+	{id: "explorevaultseal_secretpath_highforge",chance:100},
+	{id: "explorevaultseal_secretpath_midlantern",chance:100},
+	{id: "explorevaultseal_secretpath_midforge",chance:100},
+	{id: "explorevaultseal_secretpath_lowlantern",chance:100},	
+	{id: "explorevaultseal_secretpath_lowforge",chance:100}],
+	warmup:30,
+	craftable: false,
+	linked: [{id:"explorevaultseal_secretpath_failure",chance:100}]
+	},
+	
+	{id:"explorevaultseal_secretpath_highlantern",
+	actionId: "explore",
+	requirements:{lantern:10},
+	label:"We call upon the Tower of Treasures, who is unmatched.",
+	startdescription:"Nothing can best the Tower of Treasures, least of all a mere mortal construct. We will find our way through.",
+		  description:".",
+	linked: [{id:"explorevaultseal_secretpath_success_lantern",chance:100},
+	{id:"explorevaultseal_secretpath_failure",chance:100}]	  
+		  },
+		{id:"explorevaultseal_secretpath_midlantern",
+	actionId: "explore",
+	requirements:{lantern:5},
+	label:"We call upon the Tower of Treasures, who is glorious.",
+	startdescription:"Just as the light of the Glory guides dreamers, the light of the Tower of Treasures shall guide us. We can probably manage to find our way.",
+		  description:".",
+	linked: [{id:"explorevaultseal_secretpath_success_lantern",chance:70},
+	{id:"explorevaultseal_secretpath_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultseal_secretpath_lowlantern",
+	actionId: "explore",
+	requirements:{lantern:1},
+	label:"We call upon the Tower of Treasures, who is gilded.",
+	startdescription:"The Tower of Treasures was El Dorado, before El Rey Dorado. It will know of its own treasures. It might let us see them, rather than leave our bones bleached in this maze.",
+		  description:".",
+	linked: [{id:"explorevaultseal_secretpath_success_lantern",chance:30},
+	{id:"explorevaultseal_secretpath_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultseal_hiddendoor_highknock",
+	actionId: "explore",
+	requirements:{knock:10},
+	label:"We call upon the Beach-Crow, who sees what is lost.",
+	startdescription:"We bear a great power of opening. We'll almost certainly find this Hidden Door.",
+		  description:".",
+	linked: [{id:"explorevaultseal_secretpath_success_forge",chance:100},
+	{id:"explorevaultseal_secretpath_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultseal_hiddendoor_midknock",
+	actionId: "explore",
+	requirements:{knock:5},
+	label:"We call upon the Beach-Crow, who opens the earth.",
+	startdescription:"We are skilled in uncovering hidden ways. We'll probably find this Hidden Door.",
+		  description:".",
+	linked: [{id:"explorevaultseal_secretpath_success_forge",chance:70},
+	{id:"explorevaultseal_secretpath_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultseal_hiddendoor_lowknock",
+	actionId: "explore",
+	requirements:{knock:1},
+	label:"We call upon the Beach-Crow, to whom belongs what is not possessed.",
+	startdescription:"We have some ability in the matter of opening. We might find this Hidden Door. It'll be a struggle.",
+		  description:".",
+	linked: [{id:"explorevaultseal_secretpath_success_forge",chance:30},
+	{id:"explorevaultseal_secretpath_failure",chance:100}]	  
+		  },
+	
+			{
+	id: "explorevaultseal_secretpath_success_lantern",
+	actionId:"explore",
+	label: "A simple puzzle",
+	startdescription: "We head left. We always head left. And soon, we leave the maze and see light once more.",
+	description: ".",
+	effects: {seal_hiddendoor:-1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+	
+			{
+	id: "explorevaultseal_secretpath_success_forge",
+	actionId:"explore",
+	label: "Wall? What wall?",
+	startdescription: "The most secret door is meaningless if the foundations are flimsy as paper. We've made it through, at last.",
+	description: ".",
+	effects: {seal_hiddendoor:-1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+	
+				{
+	id: "explorevaultseal_secretpath_failure",
+	actionId:"explore",
+	label: "A Fruitless Search",
+	startdescription: "Where is it? We could use more Lantern, or Forge.",
+	description: ".",
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+]
+}
+

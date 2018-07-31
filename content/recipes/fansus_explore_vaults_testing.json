@@ -1,0 +1,29 @@
+ {"recipes": [
+	
+			 	{
+	id: "explore_vaultcapital1_setup",
+	label: "Beginning an Expedition: An Experiment",
+	actionId: "explore",
+	requirements:{vaulttesting:1,funds:1,follower:1},
+	effects: {seal_secretpath:1, curse_glass:1},
+	startdescription: "Let's see how everything works. [Expeditions need at least one Funds per obstacle. Followers will defeat obstacles. If you run out of Funds or Followers, the Expedition ends.]",
+	description: ".",
+	warmup:30,
+	craftable: true,
+	linked: [
+	{id: "fansus_explorevault_expeditionbegun",chance:100}],
+	},
+					{
+	id: "explorevaulttesting_success",
+	label: "Strathcoyne's Treasures",
+	actionId: "explore",
+	requirements: {vaulttesting:1},
+	effects: {vaulttesting:-1, fleeting:1},
+	deckeffect: {"vaultcontentsc":3},
+	startdescription: "We're at the end of the showcase, for better or for worse.",
+	description: "Everything works as intended, or at least I hope it does.",
+	warmup:30,
+	craftable: false
+	},
+]
+}

@@ -1,0 +1,126 @@
+ {"recipes": [
+{
+	{
+	id: "explorevaultcurse_glass_encounter",
+	actionId:"explore",
+	label: "Glass-Light Curse",
+	startdescription: "Our goal is protected by the Glass-Light Curse. Without winter or Heart, it may follow us back home and consume our memories.",
+	requirements: {curse_visions:1},
+	slots:[{id:"Assistance", description: "Funds are essential for expeditions. Followers will allow me to pass obstacles.",required: {follower:1,funds:1}}],
+	alternativerecipes: [
+	{id: "explorevaultcurse_glass_highheart",chance:100},
+	{id: "explorevaultcurse_glass_highlantern",chance:100},
+	{id: "explorevaultcurse_glass_midheart",chance:100},
+	{id: "explorevaultcurse_glass_midlantern",chance:100},
+	{id: "explorevaultcurse_glass_lowheart",chance:100},	
+	{id: "explorevaultcurse_glass_lowlantern",chance:100}],
+	warmup:30,
+	craftable: false,
+	linked: [{id:"explorevaultcurse_glass_failure",chance:100}]
+	},
+	
+	{id:"explorevaultcurse_glass_highheart",
+	actionId: "explore",
+	requirements:{heart:10},
+	label:"We call upon the Dweller in Depths, who hoards knowledge.",
+	startdescription:"The power here cannot wrest our minds from the tendrils of the Squid. Our minds will be safe.",
+		  description:".",
+	linked: [{id:"explorevaultcurse_glass_success",chance:100},
+	{id:"explorevaultcurse_glass_failure",chance:100}]	  
+		  },
+		{id:"explorevaultcurse_glass_midheart",
+	actionId: "explore",
+	requirements:{heart:5},
+	label:"We call upon the Dweller in Depths, who permits no treachery.",
+	startdescription:"We will allow no betrayal from our minds. Our memories shall stay within our grasp... Probably.",
+		  description:".",
+	linked: [{id:"explorevaultcurse_glass_success",chance:70},
+	{id:"explorevaultcurse_glass_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultcurse_glass_lowheart",
+	actionId: "explore",
+	requirements:{heart:1},
+	label:"We call upon the Dweller in Depths, who is ruthless.",
+	startdescription:"His power will grant us strength. Although, maybe strength is not what is needed to resist this curse...",
+		  description:".",
+	linked: [{id:"explorevaultcurse_glass_success",chance:30},
+	{id:"explorevaultcurse_glass_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultcurse_glass_highlantern",
+	actionId: "explore",
+	requirements:{lantern:10},
+	label:"We call upon the Tower of Treasures, who permits no equal.",
+	startdescription:"The power here will not best the power of the Glorious Lie. We will keep our memories intact.",
+		  description:".",
+	linked: [{id:"explorevaultcurse_glass_success",chance:100},
+	{id:"explorevaultcurse_glass_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultcurse_glass_midlantern",
+	actionId: "explore",
+	requirements:{lantern:5},
+	label:"We call upon the Tower of Treasures, who shines.",
+	startdescription:"If we keep its light within our minds, it should ward off the power of Moth. Or perhaps it will be all we remember.",
+		  description:".",
+	linked: [{id:"explorevaultcurse_glass_success",chance:70},
+	{id:"explorevaultcurse_glass_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultcurse_glass_lowlantern",
+	actionId: "explore",
+	requirements:{lantern:1},
+	label:"We call upon the Tower of Treasures, who beckons.",
+	startdescription:"It cannot be forgotten once seen. But everything else might be...",
+		  description:".",
+	linked: [{id:"explorevaultcurse_glass_success",chance:30},
+	{id:"explorevaultcurse_glass_failure",chance:100}]	  
+		  },
+	
+			{
+	id: "explorevaultcurse_glass_success",
+	actionId:"explore",
+	label: "The Curse Shrivels",
+	startdescription: "Our power is superior to the power that was here. We shall pass.",
+	description: ".",
+	effects: {curse_glass:-1},
+	craftable: false,
+		linked: [{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+				{
+	id: "explorevaultcurse_glass_failure",
+	actionId:"explore",
+	label: "The Curse Clings",
+	startdescription: "There is a price to be paid when one trespasses in a place like this. Some day soon, the curse will tighten around us.",
+	description: ".",
+	effects: {curse_visions:-1},
+	alternativerecipes: [{id: "curse_glass_dormant",chance:100,additional:true}]
+	craftable: false,
+		linked: [{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+	{id: "curse_visions_dormant",
+	label:"Dormant Glass-Light Curse",
+	actionId: "curse_glass",
+	startdescription: "The Glass-Light Curse has not yet taken effect.",
+	alternativerecipes: [{id: "curse_visions_active",chance:30}],
+	linked: [{id: "curse_visions_dormant",chance:100}],
+	warmup:60,
+	craftable: false},
+	
+	{id: "curse_visions_active",
+	label:"Glass-Light Curse",
+	actionId: "curse_glass",
+	requirements: {dread:-1},
+	startdescription: "The Glory is the light behind glass, or a grand celestial wound, or an eye or a mouth. Whatever it be, it will take of our reason.",
+	description:"We are lost! My name is... Your name is... We are... Who are we?",
+	aspects: {damagereason:1},
+	slots: [{id:"Reason",greedy:true,required:{reason:1}}],
+	linked: [{id: "curse_visions_active",chance:100}],
+	warmup:60
+	},
+	
+]
+}
+

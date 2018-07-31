@@ -1,0 +1,158 @@
+{"elements":
+    [
+		{
+        id: "vaulttesting",
+            label: "Middle Of Nowhere",
+            aspects:{vault:1,location:1,vaultcapital:1},
+			
+			slots:[
+			{id:"expeditionmember",label:"Leader",description:"I must have at least one Follower to start the expedition. I can add more later.",required:{follower:1},actionId:"explore"},{id:"expeditionmember2",label:"Assistant",description:"Optionally, I can add an extra Follower now, if I think they'll be useful.",required:{follower:1},actionId:"explore"},
+			{id:"expeditionfunds",label:"Funds",description:"I must have at least one Funds to begin the expedition.",required:{funds:1},actionId:"explore"},
+			{id:"expeditionfunds",label:"Further Funds",description:"Optionally, I can add more Funds now, if I'm worried about running out.",required:{funds:1},actionId:"explore"},
+			],
+            description: "FNORD?",
+			unique:true
+        },
+	
+	
+	
+	
+	
+	
+	
+	
+	{id: "peril_sea",
+	label: "Storm-Tossed Sea",
+	aspects: {peril:1},
+	description: "The sea we sail is plagued by storms. The lands we seek are past these jet-black clouds, hopefully in the unmapped history we seek. We will need Heart or Winter or both to make it through."
+	},
+		{id: "peril_clues",
+	label: "Trail of Clues",
+	aspects: {peril:1},
+	description: "One little hint leading to another telltale hint leading to another… Lantern might tell us where to go, or the intuition of Moth might allow us to tread on the right course anyway."
+	},
+		{id: "peril_fields",
+	label: "Endless Fields",
+	aspects: {peril:1},
+	description: "We must find the exact location. Lantern will light our path, that we may search thoroughly. Or we can follow the Moth within, and trust we will find the way."
+	},
+		{id: "peril_mountains",
+	label: "Mountains High",
+	aspects: {peril:1},
+	description: "Mundane mountains already are an obstacle for even a competent occultist. And these have been touched by a certain degree of power. It will require more than crampions and ropes to bypass these..."
+	},
+		{id: "peril_impossibleterrain",
+	label: "Impossible Terrain",
+	aspects: {peril:1},
+	description: "This land cannot be, should not be! Not even true steps will allow us to bypass this. But Lantern might show us another way, or Moth’s mysteries might show us the correct wrong steps that we do not plummet off a cliff."
+	},
+		{id: "peril_unrealgeometries",
+	label: "Unreal Geometries",
+	aspects: {peril:1},
+	description: "Simply to gaze upon this place sears and burns. Judicious application of Forge may tame this, or Lantern allow an iota of comprehension."
+	},
+	
+	
+	
+			{id: "seal_falsefloor",
+	label: "A False Floor",
+	aspects: {seal:1},
+	description: "The pitfall trap; simple and elegant to make, while still being the bane of innocent adventurers looking for new finds. Knock will allow us to pass through without triggering the mechanism, or Forge allow us to disarm the trap before us."
+	},
+				{id: "seal_secretpath",
+	label: "A Secret Path",
+	aspects: {seal:1},
+	description: "These treasures were never meant to be shared with anyone. Lantern-light might allow us to see both entrance and exit, or the practicalities of Forge create us a secondary path."
+	},
+				{id: "seal_toxictrick",
+	label: "A Toxic Trick",
+	aspects: {seal:1},
+	description: "The treasures in here have been cruelly trapped with toxic dusts and poison spores! Heart might allow us to continue through, or Grail intoxicate us with rare pleasure."
+	},
+				{id: "seal_sculpure",
+	label: "Captivating Sculpture",
+	aspects: {seal:1},
+	description: "Either through mastery of the craft or the invisible arts, the sight of it compels our undivided attention. Moth will allow us to forget its beauty, or Heart will demand we continue the expedition."
+	},
+				{id: "seal_milesofrock",
+	label: "Ten Million Miles of Rock",
+	aspects: {seal:1},
+	description: "These treasures, these caches, are buried deep and warded well. To open them will require Knock to pierce far and deep. Or perhaps Lantern might light another way?"
+	},
+	
+	
+	
+			{id: "guardian_zeal",
+	label: "An Ardent Zeal",
+	aspects: {guardian:1},
+	description: "This person is dead. But the walls between death and life are just another opening. Heart might give life, and the reborn soul might impart upon you a secret before telling you to move on. Or, if you are intent on bypassing an eternal guardian, Winter will end, or Forge free."
+	},
+		{id: "guardian_automata",
+	label: "Automata",
+	aspects: {guardian:1},
+	description: "A legion of hissing, thundering, roaring automata, stand before us, their gleaming bronze weaponry leveled. Fighting them would be foolish, very foolish... but perhaps we might succeed. Lantern or Knock might allow us more prudent passage."
+	},
+			{id: "guardian_carcasses",
+	label: "Clutching Carcasses",
+	aspects: {guardian:1},
+	description: "Flesh everywhere you look, lunging for you. You may cut a path, or burn the corpses, or reassert their death."
+	},
+			{id: "guardian_jade",
+	label: "Jaded Servants",
+	aspects: {guardian:1},
+	description: "The handmaidens of the Tower of Treasures may be mistaken for statues, until one sees them dance. Their every movement suggests an otherworldly greatness, and in their greatness, they care for nothing. They may be shattered by the Forge, or slain by Edge."
+	},
+				{id: "guardian_merrymakers",
+	label: "Merrymakers",
+	aspects: {guardian:1},
+	description: "From a distance they look like average partygoers, but the manic fervor in their eyes and their obscene... ”games” mark them as anything but. They demand we join them at once. We will need to either bypass them or force ourselves through."
+	},
+				{id: "guardian_unguards",
+	label: "Unguards",
+	aspects: {guardian:1},
+	description: "The Long were never here, of course, but that makes them no less dangerous. Edge will tear them apart… But perhaps to fight that which is not will be unwise. The light of Lantern might confirm their nonexistence, a safer path. Or Knock might remind them of their abominable fate and send them fleeing."
+	},
+				{id: "guardian_unresummons",
+	label: "Unresummons",
+	aspects: {guardian:1},
+	description: "Were they ever summoned? Were they ever unsummoned? They are surely as real as you are, but yet they aren’t real at all. Perhaps you aren’t as real as you thought you were. Knock might correct them, or Winter might simply end them before they can continue being wrong."
+	},
+	
+	
+	
+	
+		{id: "curse_rudimentary",
+	label: "Rudimentary Curse",
+	aspects: {curse:1},
+	description: "This shouldn’t harm anyone, perhaps give us a little shock. But we’ll still need to get past it. Heart might keep us strong, or Knock might open a way past the curse."
+	},
+		{id: "curse_fangs",
+	label: "Fangs in the Night",
+	aspects: {curse:1},
+	description: "Here is a place where a message was given, and it pierced the skin of the world. Lantern might drive it away, or Heart might provide the energy to move past it."
+	},
+	{id: "curse_glass",
+	label: "Glass-Light Curse",
+	aspects: {curse:1},
+	description: "Memories… memories of this place do not stay where they belong. We must temper our minds with Heart or Lantern, lest our own memories are knocked loose in the process."
+	},
+		{id: "curse_nonexistence",
+	label: "The Menace of Nonexistence",
+	aspects: {curse:1},
+	description: "Are you here? Really? Are you sure? Because this place never was, you know. Perhaps you are not too? Heart might reassure you of your continuance. Or perhaps an understanding of the Histories might strengthen your mind."
+	},
+		{id: "curse_mind",
+	label: "The Mind-Eating Curse",
+	aspects: {curse:1},
+	description: "Whatever sealed this place, it sought to not just prevent the further work of these adepts, but to undo it in its entirety. Lantern will allow us to keep hold of our minds, or Forge burn it away entirely."
+	},
+		{id: "curse_wyrms",
+	label: "The Wyrms in the World",
+	aspects: {curse:1},
+	description: "When the Serpents quarreled during the War of the Doors, they changed everything in their quarrel. While the world recovered, there is an instability beneath its skin. Knock might allow us to bypass it, or Moth might protect us as we venture through."
+	},
+
+
+
+]
+};

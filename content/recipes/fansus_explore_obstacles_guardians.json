@@ -1,0 +1,282 @@
+ {"recipes": [
+{
+			{
+	id: "explorevaultguardian_jade_encounter",
+	actionId:"explore",
+	label: "Jaded Servants",
+	startdescription: "The location's pristine and jaded servants have gathered to stop you. They cannot be persuaded in the same way stone cannot be persuaded, but they may be broken by Edge or Forge.",
+	requirements: {guardian_jade:1},
+	slots:[{id:"Assistance", description: "Funds are essential for expeditions. Followers will allow me to pass obstacles.",required: {follower:1,funds:1}}],
+	alternativerecipes: [
+	{id: "explorevaultguardian_jade_highedge",chance:100},
+	{id: "explorevaultguardian_jade_highforge",chance:100},
+	{id: "explorevaultguardian_jade_midedge",chance:100},
+	{id: "explorevaultguardian_jade_midforge",chance:100},	
+	{id: "explorevaultguardian_jade_lowedge",chance:100},
+	{id: "explorevaultguardian_jade_lowforge",chance:100}],
+	warmup:30,
+	craftable: false,
+	linked: [{id:"explorevaultguardian_jade_failure",chance:100}]
+	},
+	
+	{id:"explorevaultguardian_jade_highedge",
+	actionId: "explore",
+	requirements:{edge:10},
+	label:"Our strength is matchless.",
+	startdescription:"The Servants are advisors, oracles and courtiers. Their kind is not meant to fight. We have slain faster, stronger opponents. These living sculptures stand no chance of stopping us.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_jade_success_edge",chance:100},
+	{id:"explorevaultguardian_jade_failure",chance:100}]	  
+		  },
+		{id:"explorevaultguardian_jade_midedge",
+	actionId: "explore",
+	requirements:{edge:5},
+	label:"Our strength is considerable.",
+	startdescription:"The Jaded Servants were human, once. A little of that humanity remains, hidden beneath their nephrite. We can strike at that humanity like a viper, but they may defeat us before we get the chance.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_jade_success_edge",chance:70},
+	{id:"explorevaultguardian_jade_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultguardian_jade_lowedge",
+	actionId: "explore",
+	requirements:{edge:1},
+	label:"Our strength may not be enough.",
+	startdescription:"Each Servant had once been human, and each Servant had rejected their humanity for a life of brilliance. Each one could crush us in her vice grip, if she so chose. Still, we may have a chance.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_jade_success_edge",chance:30},
+	{id:"explorevaultguardian_jade_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultguardian_jade_highforge",
+	actionId: "explore",
+	requirements:{forge:10},
+	label:"We call upon the Snake-Tail, who tears at the skin of the world.",
+	startdescription:"The Jaded Servants had locked away their humanity in order to become statuesque nephrite. The Snake-Tail, who shatters doors, will be happy to shatter his way to their very core.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_jade_success_forge",chance:100},
+	{id:"explorevaultguardian_jade_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultguardian_dead_midforge",
+	actionId: "explore",
+	requirements:{forge:5},
+	label:"We call upon the Snake-Tail, who has shattered a million doors.",
+	startdescription:"The Jaded Servants are statues before they are people. They move with the grandiose rhythm of tectonic plates. The Tail had shattered things greater than tectonic plates, but not much greater.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_jade_success_forge",chance:70},
+	{id:"explorevaultguardian_jade_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultguardian_jade_lowforge",
+	actionId: "explore",
+	requirements:{forge:1},
+	label:"We call upon the Snake-Tail, who despises all borders.",
+	startdescription:"[FNORD]",
+		  description:".",
+	linked: [{id:"explorevaultguardian_jade_success_forge",chance:30},
+	{id:"explorevaultguardian_jade_failure",chance:100}]	  
+		  },
+			{
+	id: "explorevaultguardian_jade_success_edge",
+	actionId:"explore",
+	label: "The Lifeless Servants",
+	startdescription: "Their bodies may be whole, but they no longer live. Our finesse has secured us the vay forward.",
+	description: ".",
+	effects: {guardian_jade:-1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+				{
+	id: "explorevaultguardian_jade_success_forge",
+	actionId:"explore",
+	label: "The Shattered Servants",
+	startdescription: "Only jewel-shards remain where the Jaded Servants once stood. We had won our way forward.",
+	description: ".",
+	effects: {guardian_jade:-1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+				{
+	id: "explorevaultguardian_jade_failure",
+	actionId:"explore",
+	label: "The Power of Jade",
+	startdescription: "The Jaded Servants first negotiate, then prevaricate, then deceive, then chant mantras, then shout invocations, but never strike. Their clever words have repelled us.",
+	description: ".",
+	craftable: false,
+	alternativerecipes:[{id:"explorevault_casualty",chance:70,additional:true, expulsion:{limit:1,filter:{follower:1}}}],
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	{
+	id: "explorevaultguardian_zeal_encounter",
+	actionId:"explore",
+	label: "An Ardent Zeal",
+	startdescription: "This person is dead. But the walls between death and life are just another opening. Heart might give life, and the reborn soul might impart upon you a secret before telling you to move on. Or, if you are intent on bypassing an eternal guardian, Winter will end, or Forge free.",
+	requirements: {guardian_zeal:1},
+	slots:[{id:"Assistance", description: "Funds are essential for expeditions. Followers will allow me to pass obstacles.",required: {follower:1,funds:1}}],
+	alternativerecipes: [
+	{id: "explorevaultguardian_zeal_highheart",chance:100},
+	{id: "explorevaultguardian_zeal_highforge",chance:100},
+		{id: "explorevaultguardian_zeal_highwinter",chance:100},
+	{id: "explorevaultguardian_zeal_midheart",chance:100},
+		{id: "explorevaultguardian_zeal_midforge",chance:100},
+	{id: "explorevaultguardian_zeal_midwinter",chance:100},
+	{id: "explorevaultguardian_zeal_lowheart",chance:100},
+		{id: "explorevaultguardian_zeal_lowforge",chance:100},
+	{id: "explorevaultguardian_zeal_lowwinter",chance:100},
+	],
+	warmup:30,
+	craftable: false,
+	linked: [{id:"explorevaultguardian_zeal_failure",chance:100}]
+	},
+	
+	{id:"explorevaultguardian_zeal_highheart",
+	actionId: "explore",
+	requirements:{heart:10},
+	label:"We call upon the Caladrius, who does not permit death.",
+	startdescription:"This spirit will be revived.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_heart",chance:100},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		{id:"explorevaultguardian_zeal_midheart",
+	actionId: "explore",
+	requirements:{heart:5},
+	label:"We call upon the Caladrius, who cures what is incurable.",
+	startdescription:"Even death can be cured, in strange times. But are these times strange enough?",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_heart",chance:70},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  	{id:"explorevaultguardian_zeal_lowheart",
+	actionId: "explore",
+	requirements:{heart:1},
+	label:"We call upon the Caladrius, who fears death.",
+		startdescription:"It will use its power to chase dark death away from this spirit. Hopefully.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_heart",chance:30},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_zeal_highforge",
+	actionId: "explore",
+	requirements:{forge:10},
+	label:"We call upon the Strigiforme Slag, who will never submit.",
+	startdescription:"Her power will free this soul from bondage, so that we may pass.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_forge",chance:100},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_zeal_midforge",
+	actionId: "explore",
+	requirements:{forge:5},
+	label:"We call upon the Strigiforme Slag, who is unchained.",
+	startdescription:"Her power might shatter the force which binds this soul to vigil. Probably.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_forge",chance:70},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_zeal_lowforge",
+	actionId: "explore",
+	requirements:{forge:1},
+	label:"We call upon the Strigiforme Slag, who cannot be commanded.",
+	startdescription:"She cares little for slave-driver or for slave. Perhaps we may make it through.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_forge",chance:30},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  
+		  		  	{id:"explorevaultguardian_zeal_highwinter",
+	actionId: "explore",
+	requirements:{winter:10},
+	label:"We call upon the Ferryman, who will Claim what is Owed.",
+	startdescription:"This one's time has come. The Ferryman will take its Toll, and leave us be.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_winter",chance:100},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_zeal_midwinter",
+	actionId: "explore",
+	requirements:{winter:5},
+	label:"We call upon the Ferryman, who Judges.",
+	startdescription:"The Ferryman weighs the worth of all souls. If it rules in our favor, we will probably be fine.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_winter",chance:70},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+		  
+		  	{id:"explorevaultguardian_zeal_lowwinter",
+	actionId: "explore",
+	requirements:{winter:1},
+	label:"We call upon the Ferryman, who hears all Offers.",
+	startdescription:"The great spider can hear all who would bargain, but it is notoriously fickle. It might choose to aid us.",
+		  description:".",
+	linked: [{id:"explorevaultguardian_zeal_success_winter",chance:30},
+	{id:"explorevaultguardian_zeal_failure",chance:100}]	  
+		  },
+	
+			{
+	id: "explorevaultguardian_zeal_success_heart",
+	actionId:"explore",
+	label: "Triumphant Return",
+	startdescription: "They awake! Their cheeks are rosy with health, and their lips are red with blood. We will hear their wisdom, now.",
+	description: ".",
+	effects: {guardian_zeal:-1,fragmentsecrethistoriesd:1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:3
+	},
+				{
+	id: "explorevaultguardian_zeal_success_forge",
+	actionId:"explore",
+	label: "Blazing Finale",
+	startdescription: "When the Dead are summoned to the world, and their bodies are gone, they use what they can find to make a form. Now that this spirit has left, all that remains are broken keys and tattered paper.",
+	description: ".",
+	effects: {guardian_zeal:-1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+	
+				{
+	id: "explorevaultguardian_zeal_success_winter",
+	actionId:"explore",
+	label: "Chilling Supremacy",
+	startdescription: "The Dead are cold with the chill of Winter, but we are colder still. Web-like wisps of fog conceal this shade from our sight. When they clear, the spirit has vanished.",
+	description: ".",
+	effects: {guardian_zeal:-1},
+	craftable: false,
+		linked: [{id:"fansus_explorevaulttick",chance:100}],
+		warmup:30
+	},
+	
+				{
+	id: "explorevaultguardian_zeal_failure",
+	actionId:"explore",
+	label: "Eternal Zeal",
+	startdescription: "Nothing. Only the pale, mouthless shade of the Dead is here. And we still cannot bypass it.",
+	description: ".",
+	craftable: false,
+	alternativerecipes:[{id:"explorevault_casualty",chance:70,additional:true, expulsion:{limit:1,filter:{follower:1}}}],
+		linked: [{id:"explorevaulttick",chance:100}],
+		warmup:30
+	},
+]
+}
+
