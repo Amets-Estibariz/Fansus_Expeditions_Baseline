@@ -1,0 +1,112 @@
+ {"recipes": [
+
+
+
+	
+	{
+	id:"fansus_explorevault_expeditionbegun",
+	label: "The Expedition Sets Off",
+	actionId:"explore",
+	requirements:{vault:1,follower:1,funds:1},
+	startdescription: "I have given my agents the opportunity to serve. Let us hope it ends well for us all.",
+	description: ".",
+	linked: [{id: "fansus_explorevaulttick",chance:100}],
+	craftable:false
+	},
+	
+			{
+	id: "fansus_explorevaulttick",
+	comments: "Can't reach success until all the alternatives are unavailable. That means no obstacles, >0 followers and >0 funds.",
+	label: "The Expedition Continues",
+	actionId: "explore",
+		slots:[{id:"Assistance",description: "Funds are essential for expeditions. Followers will defeat obstacles.", required: {follower:1,funds:1}}],
+	startdescription: "Our expedition plans for the next challenge. It'll consume Funds; I can add Funds now, or I could send another Follower.",
+	description: ".",
+	warmup:30,
+	alternativerecipes: [
+	{id: "fansus_explorevaultsuccesslink",chance:100},
+	{id: "explorevaultfailure_nofunds",chance:100},
+	{id: "explorevaultfailure_nofollowers",chance:100}],
+	effects: {funds:-1},
+	linked:[
+	{id: "explorevaultperil_fields_encounter",chance:100},
+	{id: "explorevaultguardian_zeal_encounter",chance:100},
+	{id: "explorevaultseal_secretpath_encounter",chance:100},
+	{id: "explorevaultcurse_glass_encounter",chance:100},
+	]
+	craftable: false
+	},
+	
+	
+
+		{
+	id: "fansus_explorevaulttick_full",
+	comments: "Can't reach success until all the alternatives are unavailable. That means no obstacles, >0 followers and >0 funds.",
+	label: "The Expedition Continues",
+	actionId: "explore",
+		slots:[{id:"Assistance",description: "Funds are essential for expeditions. Followers will defeat obstacles.", required: {follower:1,funds:1}}],
+	startdescription: "Our expedition plans for the next challenge. It'll consume Funds; I can add Funds now, or I could send another Follower.",
+	description: ".",
+	warmup:30,
+	alternativerecipes: [
+	{id: "fansus_explorevaultsuccesslink",chance:100},
+	{id: "explorevaultfailure_nofunds",chance:100},
+	{id: "explorevaultfailure_nofollowers",chance:100}],
+	effects: {funds:-1},
+	linked:[
+	{id: "explorevaultperil_sea_encounter",chance:100},
+	{id: "explorevaultperil_clues_encounter",chance:100},
+	{id: "explorevaultperil_fields_encounter",chance:100},
+	{id: "explorevaultperil_mountains_encounter",chance:100},
+	{id: "explorevaultperil_impossibleterrain_encounter",chance:100},
+	{id: "explorevaultperil_unrealgeometries_encounter",chance:100},
+	
+	{id: "explorevaultguardian_zeal_encounter",chance:100},
+	{id: "explorevaultguardian_automata_encounter",chance:100}
+	{id: "explorevaultguardian_carcasses_encounter",chance:100},
+	{id: "explorevaultguardian_jade_encounter",chance:100},
+	{id: "explorevaultguardian_merrymakers_encounter",chance:100},
+	{id: "explorevaultguardian_unguards_encounter",chance:100},
+	{id: "explorevaultguardian_unresummons_encounter",chance:100},
+
+	{id: "explorevaultseal_falsefloor_encounter",chance:100},
+	{id: "explorevaultseal_secretpath_encounter",chance:100},
+	{id: "explorevaultseal_toxictrick_encounter",chance:100},
+	{id: "explorevaultseal_sculpture_encounter",chance:100},
+	{id: "explorevaultseal_milesofrock_encounter",chance:100},
+	
+	{id: "explorevaultcurse_rudimentary_encounter",chance:100},
+	{id: "explorevaultcurse_fangs_encounter",chance:100},
+	{id: "explorevaultcurse_glass_encounter",chance:100},
+	{id: "explorevaultcurse_nonexistence_encounter",chance:100},
+	{id: "explorevaultcurse_mind_encounter",chance:100},
+	{id: "explorevaultcurse_wyrms_encounter",chance:100},
+	]
+	craftable: false
+	},
+
+		
+
+	{id: "fansus_explorevaultsuccesslink",
+	label:"Treasures Lie Before Us",
+    requirements: {peril:-1,seal:-1,guardian:-1,curse:-1},
+	actionId:"explore",
+	comments:"Separate recipe link to remove the confusing slot from Success, next.",
+	linked:[{id:"explorevaultsuccess",chance:100}]
+	},
+	
+				{
+	id: "fansus_explorevaultsuccess",
+	label:"Treasures Lie Before Us",
+	actionId:"explore",
+	startdescription:"Success! I'll know more soon...",
+	description:".",
+	effects:{notoriety:1},
+		linked: [{id: "explorevaulttesting_success",chance:100},
+		],
+	},
+
+
+
+]
+}
