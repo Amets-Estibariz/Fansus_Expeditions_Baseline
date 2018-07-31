@@ -100,16 +100,16 @@
 		linked: [{id:"explorevaulttick",chance:100}],
 		warmup:30
 	},
-	{id: "curse_visions_dormant",
+	{id: "curse_glass_dormant",
 	label:"Dormant Glass-Light Curse",
 	actionId: "curse_glass",
 	startdescription: "The Glass-Light Curse has not yet taken effect.",
-	alternativerecipes: [{id: "curse_visions_active",chance:30}],
-	linked: [{id: "curse_visions_dormant",chance:100}],
+	alternativerecipes: [{id: "curse_glass_active",chance:30}],
+	linked: [{id: "curse_glass_dormant",chance:100}],
 	warmup:60,
 	craftable: false},
 	
-	{id: "curse_visions_active",
+	{id: "curse_glass_active",
 	label:"Glass-Light Curse",
 	actionId: "curse_glass",
 	requirements: {dread:-1},
@@ -117,7 +117,7 @@
 	description:"We are lost! My name is... Your name is... We are... Who are we?",
 	aspects: {damagereason:1},
 	slots: [{id:"Reason",greedy:true,required:{reason:1}}],
-	linked: [{id: "curse_visions_active",chance:100}],
+	linked: [{id: "curse_glass_active",chance:100}],
 	warmup:60
 	},
 	
